@@ -37,7 +37,7 @@
 			}
 			else {
 				PrintWriter script = response.getWriter();
-				script.println("<script> location.href='/ChulBae'; </script>");
+				script.println("<script> location.href='/'; </script>");
 			}
 		}
 	%>

@@ -12,9 +12,9 @@ public class UserDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	
-	// mysql¿¡ Á¢¼Ó ÁÖ´Â ºÎºĞ
-	public UserDAO() { // »ı¼ºÀÚ°¡ ½ÇÇàµÉ ¶§¸¶´Ù ÀÚµ¿À¸·Î db¿¬°áÀÌ ÀÌ·ç¾îÁú ¼ö ÀÖµµ·Ï ÇÔ
+
+	// mysqlì— ì ‘ì† ì£¼ëŠ” ë¶€ë¶„
+	public UserDAO() { // ìƒì„±ìê°€ ì‹¤í–‰ë  ë•Œë§ˆë‹¤ ìë™ìœ¼ë¡œ dbì—°ê²°ì´ ì´ë£¨ì–´ì§ˆ ìˆ˜ ìˆë„ë¡ í•¨
 		try {
 			String dbURL ="jdbc:mysql://localhost:3306/spring_db?characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
 			String dbID="root";
@@ -25,8 +25,8 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	// ·Î±×ÀÎÀ» ½ÃµµÇÏ´Â ÇÔ¼ö
+
+	// ë¡œê·¸ì¸ì„ ì‹œë„í•˜ëŠ” í•¨ìˆ˜
 	public int login(String userID, String userPassword) {
 		String SQL = "SELECT pw FROM USER WHERE id=?";
 		try {
@@ -46,8 +46,8 @@ public class UserDAO {
 		}
 		return -2;
 	}
-	
-	// ´Ğ³×ÀÓÀ» ¸®ÅÏÇÏ´Â ÇÔ¼ö
+
+	// ë‹‰ë„¤ì„ì„ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜
 	public String nick(String userID) {
 		String SQL = "SELECT nickname FROM USER WHERE id=?";
 		try {
@@ -62,8 +62,8 @@ public class UserDAO {
 		}
 		return "";
 	}
-	
-	// È¸¿ø°¡ÀÔ
+
+	// íšŒì›ê°€ì…
 	public int join(USERS user) {
 		String SQL = "INSERT INTO user VALUES (?,?,?)";
 		try {
@@ -75,10 +75,10 @@ public class UserDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //DB ¿À·ù
+		return -1; //DB ì˜¤ë¥˜
 	}
-	
-	// »ç¿ëÀÚ °èÁ¤À» ºÒ·¯¿À´Â ÇÔ¼ö
+
+	// ì‚¬ìš©ì ê³„ì •ì„ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
 	public USERS getuser (String userid) {
 		String SQL = "SELECT * FROM user WHERE id = ?";
 		try {
@@ -87,11 +87,11 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				USERS u = new USERS();
-				
+
 				u.setId(rs.getString(1));
 				u.setPw(rs.getString(2));
 				u.setNickname(rs.getString(3));
-			
+
 				return u;
 			}
 		} catch(Exception e) {
@@ -99,26 +99,26 @@ public class UserDAO {
 		}
 		return null;
 	}
-	
-	// ¼öÁ¤ ÇÔ¼ö
+
+	// ìˆ˜ì • í•¨ìˆ˜
 	public int update(String id, String pw, String nickname) {
 		String SQL = "UPDATE user SET pw = ?, nickname = ? WHERE id = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			
+
 			pstmt.setString(1, pw);
 			pstmt.setString(2, nickname);
 			pstmt.setString(3, id);
-			
+
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		return -1; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+
+		return -1; // ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜
 	}
-	
-	// ´Ğ³×ÀÓ Áßº¹À» È®ÀÎÇÏ´Â ÇÔ¼ö
+
+	// ë‹‰ë„¤ì„ ì¤‘ë³µì„ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 	public int overlap(String id, String nick) {
 		String SQL = "SELECT id FROM USER WHERE nickname = ?";
 		try {
@@ -126,15 +126,14 @@ public class UserDAO {
 			pstmt.setString(1, nick);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				if(rs.getString(1).equals(id)) { // ÀÚ½ÅÀÇ ¾ÆÀÌµğ¿Í ´Ğ³×ÀÓÀÌ °ãÃÄÁö´Â °æ¿ì
+				if(rs.getString(1).equals(id)) { // ìì‹ ì˜ ì•„ì´ë””ì™€ ë‹‰ë„¤ì„ì´ ê²¹ì³ì§€ëŠ” ê²½ìš°
 					return 1;
 				}
-				return 0; // ´Ğ³×ÀÓÀÌ Áßº¹µÊ
+				return 0; // ë‹‰ë„¤ì„ì´ ì¤‘ë³µë¨
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return 1; // ´Ğ³×ÀÓÀÌ Áßº¹µÇÁö ¾ÊÀ½
+		return 1; // ë‹‰ë„¤ì„ì´ ì¤‘ë³µë˜ì§€ ì•ŠìŒ
 	}
 }
-

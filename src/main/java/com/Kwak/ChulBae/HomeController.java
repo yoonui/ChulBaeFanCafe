@@ -12,7 +12,7 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping("/")
     public String home() {
         return "home";
     }
@@ -111,6 +111,4 @@ public class HomeController {
     public String mypageAction() {
         return "mypageAction";
     }
-
-
 }

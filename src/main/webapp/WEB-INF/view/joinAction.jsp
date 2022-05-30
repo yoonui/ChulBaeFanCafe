@@ -37,7 +37,7 @@
 				}
 				else { // 회원가입 성공
 					PrintWriter script = response.getWriter();
-					script.println("<script> location.replace('/ChulBae'); </script>");
+					script.println("<script> location.replace('/'); </script>");
 				}
 			}
 		}

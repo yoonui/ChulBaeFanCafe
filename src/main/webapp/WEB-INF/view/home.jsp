@@ -29,7 +29,7 @@
 	<div>
 		<div style="padding:10px;"></div>
 		<div class="banner">
-			<a href="/ChulBae">
+			<a href="/">
 				<img src="img/banner.jpg" alt="나의배나무" width="1080"/>
 			</a>
 		</div>
@@ -37,11 +37,11 @@
 	<div class="special-menu">
 		<div class="box-special-menu">
 			<ul class="special-menus">
-				<li class="dot"><a href="/ChulBae/bbs1" title="전체 게시글">전체글보기</a></li>
-				<li class="dot"><a href="/ChulBae/bbs2" title="공지사항">공지사항</a></li>
-				<li class="dot"><a href="/ChulBae/bbs3" title="철배가">철배가</a></li>
-				<li class="dot"><a href="/ChulBae/bbs4" title="철배에게">철배에게</a></li>
-				<li class="dot"><a href="/ChulBae/bbs5" title="철배뉴짤">철배님 뉴짤</a></li>
+				<li class="dot"><a href="/bbs1" title="전체 게시글">전체글보기</a></li>
+				<li class="dot"><a href="/bbs2" title="공지사항">공지사항</a></li>
+				<li class="dot"><a href="/bbs3" title="철배가">철배가</a></li>
+				<li class="dot"><a href="/bbs4" title="철배에게">철배에게</a></li>
+				<li class="dot"><a href="/bbs5" title="철배뉴짤">철배님 뉴짤</a></li>
 				<li><a href="/ChulBae/bbs6" title="자유게시판">자유게시판</a></li>
 			</ul>
 		</div>
@@ -54,14 +54,14 @@
         <div class="cafe-box-menus">
         	<% if(userID == null) {%>
 	            <div class="cafe-login">
-	                <a href="/ChulBae/login"><span>로그인</span></a>
+	                <a href="/login"><span>로그인</span></a>
 	            </div>
 	            <div class="cafe-join">
-	                <a href="/ChulBae/join"><span>회원가입</span></a>
+	                <a href="/join"><span>회원가입</span></a>
 	            </div>
             <% } else { %>
 	            <div class="cafe-mypage">
-	                <a href="/ChulBae/mypage"><span>마이페이지</span></a>
+	                <a href="/mypage"><span>마이페이지</span></a>
 	            </div>
 	            <div class="cafe-logout">
 	                <a href="logoutAction"><span>로그아웃</span></a>
@@ -71,24 +71,24 @@
         
         <div class="cafe-menus">
             <ul>
-                <li><img src="img/post.png" width="12" height="12"><a href="/ChulBae/bbs1">전체글보기</a></li>
+                <li><img src="img/post.png" width="12" height="12"><a href="/bbs1">전체글보기</a></li>
             </ul>
             <ul>
-                <li><img src="img/post.png" width="12" height="12"><a href="/ChulBae/bbs2">공지사항</a></li>
+                <li><img src="img/post.png" width="12" height="12"><a href="/bbs2">공지사항</a></li>
             </ul>
             <div class="cafe-menus-title">
                 <h3>철배님과 함께</h3>
             </div>
             <ul>
-                <li><img src="img/post.png" width="12" height="12"><a href="/ChulBae/bbs3">철배가</a></li>
-                <li><img src="img/post.png" width="12" height="12"><a href="/ChulBae/bbs4">철배에게</a></li>
-                <li><img src="img/post.png" width="12" height="12"><a href="/ChulBae/bbs5">철배님 뉴짤</a></li>
+                <li><img src="img/post.png" width="12" height="12"><a href="/bbs3">철배가</a></li>
+                <li><img src="img/post.png" width="12" height="12"><a href="/bbs4">철배에게</a></li>
+                <li><img src="img/post.png" width="12" height="12"><a href="/bbs5">철배님 뉴짤</a></li>
             </ul>
             <div class="cafe-menus-title">
                 <h3>팬 잔치</h3>
             </div>
             <ul>
-                <li><img src="img/post.png" width="12" height="12"><a href="/ChulBae/bbs6">자유 게시판</a></li>
+                <li><img src="img/post.png" width="12" height="12"><a href="/bbs6">자유 게시판</a></li>
             </ul>
         </div>
 
@@ -105,7 +105,7 @@
                 	for(int i = 0; i<list.size(); i++){
                 %>
                 <ul class="cafe-post-middle">
-                    <li><div class="cafe-post-dot"></div><a href="/ChulBae/view?bbsid=<%=list.get(i).getBbsid()%>"><%=list.get(i).getBbsTitle()%></a></li>
+                    <li><div class="cafe-post-dot"></div><a href="/view?bbsid=<%=list.get(i).getBbsid()%>"><%=list.get(i).getBbsTitle()%></a></li>
                     <li><%=list.get(i).getNickname()%></li>
                     <li><%=list.get(i).getBdDate()%></li>
                 </ul>
@@ -114,7 +114,7 @@
             
             <% if(userID != null) {%>
 	            <div class="cafe-write">
-	                <a href="/ChulBae/write"><span>글쓰기</span></a>
+	                <a href="/write"><span>글쓰기</span></a>
 	            </div>
             <%} %>
             

@@ -24,7 +24,7 @@
 		}
 		if(bbsid == 0) {
 			PrintWriter s = response.getWriter();
-			s.println("<script> alert('유효하지 않은 글입니다.'); location.href='/ChulBae'; </script>");
+			s.println("<script> alert('유효하지 않은 글입니다.'); location.href='/'; </script>");
 		}
 		
 		BoardDAO boarddao = new BoardDAO();
@@ -35,7 +35,7 @@
 		}
 		else {
 			PrintWriter s = response.getWriter();
-			s.println("<script> alert('글 삭제에 성공했습니다.'); location.href='/ChulBae'; </script>");
+			s.println("<script> alert('글 삭제에 성공했습니다.'); location.href='/'; </script>");
 		}
 	%>
 </body>

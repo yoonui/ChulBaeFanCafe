@@ -12,7 +12,7 @@
 	%>
 	
 	<script>
-	location.replace('/ChulBae');
+	location.replace('/');
 	</script>
 </body>
 </html>

@@ -39,7 +39,7 @@
 				}
 				else {
 					PrintWriter s = response.getWriter();
-					s.println("<script> alert('회원 수정이 완료되었습니다.'); location.href='/ChulBae'; </script>");
+					s.println("<script> alert('회원 수정이 완료되었습니다.'); location.href='/'; </script>");
 				}
 			}
 		}

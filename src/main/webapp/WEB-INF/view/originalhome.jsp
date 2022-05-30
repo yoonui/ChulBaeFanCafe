@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width" initial-scale="1">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	<title>나의 배나무</title>
 	<style>
@@ -34,12 +33,12 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/ChulBae/">나의 배나무</a>
+			<a class="navbar-brand" href="/">나의 배나무</a>
 		</div>
 		<div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/ChulBae/">메인</a></li>
-				<li><a href="/ChulBae/bbs">게시판</a></li>
+				<li class="active"><a href="/">메인</a></li>
+				<li><a href="/bbs">게시판</a></li>
 			</ul>
 			<% if(userID==null) { // 로그인X %>
 			<ul class="nav navbar-nav navbar-right">
@@ -48,8 +47,8 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">접속하기<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="/ChulBae/login">로그인</a></li>
-						<li><a href="/ChulBae/join">회원가입</a></li>
+						<li><a href="/login">로그인</a></li>
+						<li><a href="/join">회원가입</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -60,7 +59,7 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">회원관리<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="/ChulBae/mypage">마이페이지</a></li>
+							<li><a href="/mypage">마이페이지</a></li>
 							<li><a href="logoutAction">로그아웃</a></li>
 						</ul>
 					</li>
@@ -73,18 +72,18 @@
 	<div class="jumbotron" style="padding-top: 20px;">
 		<h1 class="Text" style="padding-bottom:20px; font-size:50px;">@@@ 나의 배나무 @@@</h1>
 		<div class="banner">
-			<img src="${pageContext.request.contextPath}/resources/img/banner.jpg" style="margin-top:20px;"/>
+			<img src="img/banner.jpg" style="margin-top:20px;"/>
 		</div>
 		<h3 class="Text" style="margin:50px;">곽철배 팬카페 '나의 배나무'에 오신 것을 환영합니다@^.^@</h3>
-		<div class="Text" style="margin:20px; font-size:20px;"><a href="/ChulBae/profile">곽철배 프로필</a></div>
+		<div class="Text" style="margin:20px; font-size:20px;"><a href="/profile">곽철배 프로필</a></div>
 		<div class="Text" style="margin:20px; font-size:20px;">곽철배 인스타 -> 해킹당했어요ㅠㅠ</div>
 		<div class="Text" style="margin:20px; font-size:20px;">곽철배 유튜브 -> 해킹당했어요ㅠㅠ</div>
 	</div>
 	
 	<!-- 애니메이션 담당 제이쿼리 -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.min.js"></script>
+	<script src="js/jquery-3.5.1.min.js"></script>
 	<!-- 부트스트랩 JS -->
-	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
+	<script src="js/bootstrap.js"></script>
 </body>
 </html>
 

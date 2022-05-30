@@ -9,6 +9,7 @@ public class BOARD {
 	private String bdDate;
 	private String bbsContent;
 	private String bdpost;
+
 	public int getBbsid() {
 		return bbsid;
 	}

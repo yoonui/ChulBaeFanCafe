@@ -21,7 +21,7 @@
 		if(result == 1){
 			session.setAttribute("id", user.getId()); // 로그인한 회원에게 세션 부여
 			PrintWriter script = response.getWriter();
-			script.println("<script> location.replace('/ChulBae'); </script>");
+			script.println("<script> location.replace('/'); </script>");
 		}
 		else if(result == 0){
 			PrintWriter script = response.getWriter();
